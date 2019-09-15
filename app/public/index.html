@@ -38,7 +38,7 @@
         <tbody>
           <tr>
             <td>Name: {{person.name.first}}</td>
-            <td><a id="source" href="mailto:">Mail to: {{person.email}}</td>
+            <td><a id="source" v-bind:href="'mailto:' + person.email">Mail to: {{person.email}}</td>
             <td>Wish Me on: {{person.dob.date}}</td>
           </tr>
           <tr>

@@ -4,6 +4,7 @@
   <title>Dora Holt</title>
   <link rel="stylesheet" href="css/Style.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -25,39 +26,36 @@
         </ul>
       </div>
     </nav>
-    <div class="container thumbnail">
-      <a href="Images/profile.jpg "><img id ="profile" src="Images/profile.jpg "></a>
+    <div id="personWaitingApp" class="container thumbnail">
+      <a v-bind:href=person.picture.large ><img v-bind:src= person.picture.large style="padding:20px ; "alt="" id="headshot"></a>
       <p><a id="source" href="https://randomuser.me/">Source: randomuser</a> </p>
-    </div>
 
-    <div class="container">
+
+    <div  class="container">
       <center class="paragraph">Details</center>
       <table class="table table-striped tableIndex">
 
         <tbody>
           <tr>
-            <td>Name: Dora Holt</td>
-            <td><a id="source" href="mailto:dora.holt52@example.com">Mail to: dora.holt52@example.com</td>
-            <td>Wish Me on: 6/1/1975</td>
+            <td>Name: {{person.name.first}}</td>
+            <td><a id="source" href="mailto:">Mail to: {{person.email}}</td>
+            <td>Wish Me on: {{person.dob.date}}</td>
           </tr>
           <tr>
-            <td>Address: 6500 Thornridge Cir</td>
-            <td>Ph No. :(649)-275-8759</td>
-            <td>Country: United States</td>
+            <td>Address: {{person.location.street}}</td>
+            <td>Ph No. :{{person.phone}}</td>
+            <td>Country: {{person.nat}}</td>
           </tr>
         </tbody>
 
       </table>
-      <center class="paragraph">My Painting</center>
-      <div class="container thumbnail">
-        <a href="Images/painting.jpg "><img style="width: 400px;"src="Images/painting.jpg "></a>
-        <p><a id="source" href="https://thecanvasroadshow.com/workshop-events/sea-glass-art-creations-at-labelle-winery/">Source: thecanvasroadshow</a> </p>
-      </div>
-
     </div>
+  </div>
    <footer>
      <p style="padding: 2%; margin-bottom: 0%"> Welcome to my Page</p>
    </footer>
+
+   <script src="js/waiting.app.js"></script>
 
 </body>
 </html>
